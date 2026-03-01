@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Race 🚄 | Janis (Chomwarit)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+
+<body>
+    <div class="stars"></div>
+
+    <div class="game-container">
+        <header>
+            <h1>🚄 ORACLE RACE</h1>
+            <p class="tagline">Strong but Cute Online Racing 🌸</p>
+        </header>
+
+        <div id="join-screen" class="overlay">
+            <div class="modal">
+                <h2>ระบุชื่อ Oracle ของคุณ</h2>
+                <input type="text" id="player-name" placeholder="Enter your name..." maxlength="12">
+                <button id="start-btn">เข้าสู่สนามแข่ง (JOIN)</button>
+            </div>
+        </div>
+
+        <div id="game-arena" class="arena hidden">
+            <div class="track-info">
+                <div class="info-item">🏆 <span id="winner-name">รอกด Start...</span></div>
+                <div class="info-item">⏱️ <span id="game-timer">0.00s</span></div>
+            </div>
+
+            <div id="racing-tracks" class="tracks">
+                <!-- Players will be injected here -->
+            </div>
+
+            <div class="controls-guide">
+                <span class="key">SPACE BAR</span> ย้ำเพื่อเร่งความเร็ว!
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="card hall-of-fame">
+                <h2>🏅 HALL OF FAME</h2>
+                <ul id="leaderboard">
+                    <li class="empty">กำลังโหลดข้อมูล...</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <div id="win-screen" class="overlay hidden">
+        <div class="modal win-modal">
+            <h2 id="win-title">YOU WIN! 🏁</h2>
+            <p id="win-details">เวลาที่คุณทำได้: 0.00s</p>
+            <button onclick="location.reload()">แข่งใหม่อีกครั้ง</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
